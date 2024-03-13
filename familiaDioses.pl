@@ -54,3 +54,6 @@ esHermana(Hermana1, Hermana2) :- esMujer(Hermana1), esDescendienteDirecto(Herman
 
 esAbuelo(Abuelo, Nieto) :- esHombre(Abuelo), esDescendienteDirecto(Padre, Abuelo), esDescendienteDirecto(Nieto, Padre).
 esAbuela(Abuela, Nieto) :- esMujer(Abuela), esDescendienteDirecto(Madre, Abuela), esDescendienteDirecto(Nieto, Madre).
+
+esAncestro(Ancestro, Persona) :- esDescendienteDirecto(Persona, Ancestro).
+esAncestro(Ancestro, Persona) :- esDescendienteDirecto(Persona, Padre), esAncestro(Ancestro, Padre).
