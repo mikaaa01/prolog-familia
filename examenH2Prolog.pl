@@ -35,6 +35,12 @@ color(omen560, plateado).
 color(pavilion15a, plateado).
 color(destrunaitor500, plateado).
 
+esColor(negro).
+esColor(blanco).
+esColor(rojo).
+esColor(verde).
+esColor(plateado).
+
 
 % REGLAS
 
@@ -43,5 +49,19 @@ esCliente(Cliente):- cliente(Cliente).
 esCategoria(Categoria):- categoria(Categoria).
 
 
-esProducto(Color):- esColor(Color, Producto).
-esProducto(Color):- esColor(Producto,negro), esColor(Producto, negro).
+esProducto(Color):- deColor(Color).
+esProducto(Color):- deColor(Producto,esColor), esProducto(Producto, negro).
+
+esProducto(Color):- deColor(Color).
+esProducto(Color):- deColor(Producto,esColor), esProducto(Producto, blanco).
+
+esProducto(Color):- deColor(Color).
+esProducto(Color):- deColor(Producto,esColor), esProducto(Producto, rojo).
+
+esProducto(Color):- deColor(Color).
+esProducto(Color):- deColor(Producto,esColor), esProducto(Producto, verde).
+
+esProducto(Color):- deColor(Color).
+esProducto(Color):- deColor(Producto,esColor), esProducto(Producto,plateado).
+
+
