@@ -103,7 +103,6 @@ es_categoria(Producto, marca_patito) :- es_producto(Producto), es_computadora(Pr
 
 
 % Reglas para recomendar productos a los clientes según sus gustos
-% Reglas para recomendar productos según los gustos de los clientes
 
 % Gustos de Maria
 recomendar_producto(maria, Producto) :-
