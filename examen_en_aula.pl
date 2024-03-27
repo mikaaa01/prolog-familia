@@ -32,29 +32,59 @@ estaEnCategoria(entretenimiento, producto).
 estaEnCategoria(electrodomestico, producto).
 
 
+esProductoDentroDeCategoria(Producto, Categoria):-esProducto(Producto), esCategoria(Categoria), estaEnCategoria(Producto, Categoria).
+esProductoDentroDeCategoria(Producto, Categoria):-estaEnCategoria(Categoria2, Categoria), esProductoDentroDeCategoria(Producto, Categoria2).
+
 tieneCaracteristica("lg510", blanco).
-
-tieneCaracteristica("lg510", verde).
-tieneCaracteristica("lg510", rojo).
-
 tieneCaracteristica("lg510", barato).
 tieneCaracteristica("lg510", bueno).
-
-tieneCaracteristica("lg510", malo).
-tieneCaracteristica("lg510", caro).
 
 esBlanco("lg510").
 esBarato("lg510").
 esBueno("lg510").
-esVerde("lg510").
-esRojo("lg510").
-esMalo("lg510").
-esCaro("lg510").
 
-esProductoDentroDeCategoria(Producto, Categoria):-esProducto(Producto), esCategoria(Categoria), estaEnCategoria(Producto, Categoria).
-esProductoDentroDeCategoria(Producto, Categoria):-estaEnCategoria(Categoria2, Categoria), esProductoDentroDeCategoria(Producto, Categoria2).
+tieneCaracteristica("samsungB125", negro).
+tieneCaracteristica("samsungB125", caro).
+tieneCaracteristica("samsungB125", malo).
 
-% Recomendar a maria 1
+esNegro("samsungB125").
+esCaro("samsungB125").
+esMalo("samsungB125").
+
+tieneCaracteristica("lgBatimix", rojo).
+tieneCaracteristica("lgBatimix", barato).
+tieneCaracteristica("lgBatimix", malo).
+
+esRojo("lgBatimix").
+esBarato("lgBatimix").
+esMalo("lgBatimix").
+
+tieneCaracteristica("samsungL200", negro).
+tieneCaracteristica("samsungL200", caro).
+tieneCaracteristica("samsungL200", bueno).
+
+esNegro("samsungL200").
+esCaro("samsungL200").
+esBueno("samsungL200").
+
+tieneCaracteristica("bose", blanco).
+tieneCaracteristica("bose", caro).
+tieneCaracteristica("bose", negro).
+
+esBlanco("bose").
+esCaro("bose").
+esNegro("bose").
+
+tieneCaracteristica("lg", rojo).
+tieneCaracteristica("lg", barato).
+tieneCaracteristica("l"lg"g", malo)"lg".
+
+esRojo("lg").
+esBarato("lg").
+esMalo("lg").
+
+
+% Recomendar a maria 
 recomendarAMaria1(Producto):-esProducto(Producto), tieneCaracteristicas(Producto, verde), esProductoDentroDeCategoria(Producto, producto).
 recomendarAMaria1(Producto):-esProducto(Producto), tieneCaracteristicas(Producto, blanco), tieneCaracteristicas(Producto, barato), esProductoDentroDeCategoria(Producto, entretenimiento).
 recomendarAMaria1(Producto):-esProducto(Producto), tieneCaracteristicas(Producto, rojo),  tieneCaracteristicas(Producto, malo), esProductoDentroDeCategoria(Producto, electrodomestico).
