@@ -77,7 +77,7 @@ esNegro("bose").
 
 tieneCaracteristica("lg", rojo).
 tieneCaracteristica("lg", barato).
-tieneCaracteristica("l"lg"g", malo)"lg".
+tieneCaracteristica("lg", malo).
 
 esRojo("lg").
 esBarato("lg").
